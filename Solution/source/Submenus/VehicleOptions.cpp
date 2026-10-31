@@ -1546,3 +1546,4 @@ REGISTER_SUBMENU(VEHICLESPEEDOS_DARK,  sub::Speedo::SpeedoThemesDark)
 REGISTER_SUBMENU(MULTIPLATNEONS,       sub::VehicleMultiPlatNeonsMenu)
 REGISTER_SUBMENU(VEHICLESLAM,          sub::VehicleSlam::VehicleSlamMenu)
 REGISTER_SUBMENU(AUTODRIVESUB,         sub::VehicleAutoDrive::AutoDriveMenu)
+
