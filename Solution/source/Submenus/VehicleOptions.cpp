@@ -246,13 +246,17 @@ namespace sub
 
 		if (vehicleMenuModShop) 
 		{
-			if (DOES_ENTITY_EXIST(g_myVeh)) 
+			// Use the current vehicle, otherwise fall back to the last vehicle the player sat in
+			Vehicle modShopVeh = g_myVeh;
+			if (!DOES_ENTITY_EXIST(modShopVeh))
+				modShopVeh = GET_PLAYERS_LAST_VEHICLE();
+			if (DOES_ENTITY_EXIST(modShopVeh)) 
 			{ 
-				sub::SetVehicleModShopTarget(g_myVeh); Menu::NewSetMenu(SUB::MODSHOP);
+				sub::SetVehicleModShopTarget(modShopVeh); Menu::NewSetMenu(SUB::MODSHOP);
 			}
 			else 
 			{
-				Game::Print::ShowNotification("~r~Error:", "You are not in a vehicle.");
+				Game::Print::ShowNotification("~r~Error:", "No current or previous vehicle found.");
 			}
 			return;
 		}
